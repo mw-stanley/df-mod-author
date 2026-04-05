@@ -4,6 +4,8 @@ This skill is a tool to help you create and edit mods for Dwarf Fortress.
 
 Add this skill to your agent so it can understand the structure of Dwarf Fortress mods, RAW files, and tokens and arguments used in them.
 
+You can see an example of the skill in action here: https://gist.github.com/mw-stanley/a6017233be672e05de8f18f122c6910f
+
 ## Update information
 
 - This skill is current as of Dwarf Fortress version 53.11.
