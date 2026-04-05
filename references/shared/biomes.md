@@ -8,15 +8,35 @@ These tokens encompass multiple individual biomes and are commonly used for broa
 
 | Token | Description |
 | :--- | :--- |
-| **ALL** | Every biome except subterranean ones. |
-| **ANY_LAND** | All land biomes (excludes oceans, lakes, and pools). |
+| **ALL_MAIN** | Every biome except pools, rivers, and subterranean features. |
+| **ANY_LAND** | All main biomes excluding oceans and lakes. |
 | **NOT_FREEZING** | All land biomes except Mountain, Glacier, and Tundra. |
 | **ANY_TEMPERATE** | All temperate biomes. |
 | **ANY_TROPICAL** | All tropical biomes. |
-| **ANY_FOREST** | All forest types (Taiga, Coniferous, Broadleaf). |
+| **ANY_SHRUBLAND** | All shrubland types. |
+| **ANY_GRASSLAND** | All grassland types. |
+| **ANY_SAVANNA** | All savanna types. |
 | **ANY_DESERT** | Badlands, Rocky Wasteland, and Sand Deserts. |
+| **ANY_WETLAND** | All swamp and marsh types. |
+| **ANY_TEMPERATE_WETLAND** | All temperate swamp and marsh types. |
+| **ANY_TROPICAL_WETLAND** | All tropical swamp and marsh types. |
+| **ANY_TROPICAL_MARSH** | All tropical marsh types. |
+| **ANY_TEMPERATE_MARSH** | All temperate marsh types. |
+| **ANY_TROPICAL_SWAMP** | All tropical swamp types. |
+| **ANY_TEMPERATE_SWAMP** | All temperate swamp types. |
+| **ANY_FOREST** | All forest types. |
+| **ANY_TEMPERATE_FOREST** | All temperate forest types. |
+| **ANY_TROPICAL_FOREST** | All tropical forest types. |
 | **ANY_TEMPERATE_BROADLEAF** | Temperate broadleaf forests, grasslands, savannas, shrublands, and marshes. |
 | **ANY_TROPICAL_BROADLEAF** | Tropical dry/moist broadleaf forests, grasslands, savannas, shrublands, and marshes. |
+| **ANY_OCEAN** | All ocean biomes. |
+| **ANY_LAKE** | All lake biomes. |
+| **ANY_TEMPERATE_LAKE** | All temperate lake biomes. |
+| **ANY_TROPICAL_LAKE** | All tropical lake biomes. |
+| **ANY_POOL** | All pool biomes. |
+| **ANY_RIVER** | All river biomes. |
+| **ANY_TEMPERATE_RIVER** | All temperate river biomes. |
+| **ANY_TROPICAL_RIVER** | All tropical river biomes. |
 
 ---
 
@@ -29,6 +49,7 @@ These tokens encompass multiple individual biomes and are commonly used for broa
 | **MOUNTAIN** | Mountains |
 | **GLACIER** | Polar |
 | **TUNDRA** | Polar |
+| **FOREST_TAIGA** | Taiga |
 | **TAIGA** | Taiga |
 | **FOREST_TEMPERATE_CONIFER** | Temperate Coniferous Forest |
 | **FOREST_TEMPERATE_BROADLEAF** | Temperate Broadleaf Forest |
@@ -78,6 +99,12 @@ These tokens encompass multiple individual biomes and are commonly used for broa
 | **POOL_TROPICAL_FRESHWATER** | Tropical Freshwater Pool |
 | **POOL_TROPICAL_BRACKISHWATER** | Tropical Brackish Pool |
 | **POOL_TROPICAL_SALTWATER** | Tropical Saltwater Pool |
+| **RIVER_TEMPERATE_FRESHWATER** | Temperate Freshwater River |
+| **RIVER_TEMPERATE_BRACKISHWATER** | Temperate Brackish River |
+| **RIVER_TEMPERATE_SALTWATER** | Temperate Saltwater River |
+| **RIVER_TROPICAL_FRESHWATER** | Tropical Freshwater River |
+| **RIVER_TROPICAL_BRACKISHWATER** | Tropical Brackish River |
+| **RIVER_TROPICAL_SALTWATER** | Tropical Saltwater River |
 
 ### Subterranean (Underground)
 
