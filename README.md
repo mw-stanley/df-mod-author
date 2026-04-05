@@ -32,6 +32,19 @@ You can see an example of the skill in action here: https://gist.github.com/mw-s
 - Use a powerful model with reasoning - the DF raws can require a lot of reasoning to get right. Claude has a model called `opusplan` that uses Opus to plan and Sonnet to execute that can be useful.
 - I prefer to use the CLI to run the agent with this skill - I have tested with the `gemini` and `claude` CLIs. You can use the CLI in conjunction with an IDE like VSCode, Antigravity, or Cursor. 
 
+#### What is the skill good at?
+
+- Anything that's repetitive and tedious, like adding an item to many graphics conditions, gathering up all the item definitions in a mod and adding them to entities, etc.
+- I have used prompts like "Add all the items from the mod to the dwarf entity"; "remove my test items from the item definitions, graphics, and entity files" and so on.
+- If it's something the AI could write a script to do but you don't want to because that would take even longer than doing it - that's a great candidate for something the agent can do. A good model will often proactively write scripts to do this type of work if you use planning mode, but you can also tell it to do it.
+- It's good at using contextual knowledge from the vanilla files to guess at the right thing to do - when I've told it to update some CONDITION_ITEM_WORN tokens, it knew to update the SHUT_OFF_IF_ITEM_PRESENT tokens as well.
+
+#### What is the skill bad at?
+
+- It's not good at tasks that are too big. "Make me a mod like x" is going to be too big. You need to break it down into smaller steps.
+- It's not great at coming up with new ideas or being creative. If you give it a creative prompt like "make a wooly mammoth", it will probably hallucinate tokens or arguments - you did tell it to invent stuff! Use it as a tool to implement your ideas, not to come up with them. There are publically available agent skills to help with brainstorming that go well with this skill.
+- It's not perfect at validating its output - if you tell it to get creative without double-checking everything, it will probably make mistakes. If you see that it's doing a lot of direct file authoring, be suspicious. If it's writing scripts to do the work, that's a good sign.
+
 ### Validating & Troubleshooting
 
 - The agent should be pretty good about not hallucinating tokens or arguments, but it's not perfect. 
@@ -48,4 +61,4 @@ Please feel free to open an issue or submit a pull request to suggest improvemen
 
 You can join the Kitfox Games Discord to chat with other modders and get help with your mods. Please note that this is a community server and not directly affiliated with the developers of this skill.
 
-Members of the community will not be very tolerant of being asked to clean up after an AI agent that has made a mess of things. Get the agent to help you first.
+Members of the community will not be very tolerant of being asked to clean up after an AI agent that has made a mess of things. Get the agent to help you first and double-check its work yourself.
