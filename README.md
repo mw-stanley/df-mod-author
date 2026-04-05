@@ -8,7 +8,7 @@ Add this skill to your agent so it can understand the structure of Dwarf Fortres
 
 - This skill is current as of Dwarf Fortress version 53.11.
 - If you're using a newer version of Dwarf Fortress, there may be token changes that are not documented in the skill. 
-- The skill will attempt to use the vanilla files to determine the correct tokens and arguments, but it may not always succeed.
+- If the skill is outdated, the agent should attempt to use the vanilla files to determine the correct tokens and arguments, but it may not always succeed.
 
 ## Teaching the Agent where to find the vanilla files
 
@@ -30,12 +30,13 @@ Add this skill to your agent so it can understand the structure of Dwarf Fortres
 - Use a powerful model with reasoning - the DF raws can require a lot of reasoning to get right. Claude has a model called `opusplan` that uses Opus to plan and Sonnet to execute that can be useful.
 - I prefer to use the CLI to run the agent with this skill - I have tested with the `gemini` and `claude` CLIs. You can use the CLI in conjunction with an IDE like VSCode, Antigravity, or Cursor. 
 
-### Validating
+### Validating & Troubleshooting
 
 - The agent should be pretty good about not hallucinating tokens or arguments, but it's not perfect. 
 - The agent should be able to validate its own work by checking the vanilla raws and the instructions in this skill - tell it to do so if it hasn't.
-- 
 - Make changes in small steps and validate them in-game to isolate issues and then ask the agent to fix them.
+- Tell the agent to explain its reasoning to you if you think it might have made a mistake.
+- If the agent is having trouble with a task, try breaking it down into smaller steps and asking the agent to complete each step individually - planning mode is great for this.
 
 ## Feedback and improvements
 
