@@ -10,8 +10,8 @@ Entity definitions define civilizations, their species, ethics, cultural values,
 - `[CREATURE:creature_id]` - Defines the primary species of the civilization.
 
 ## 2. Civilization Properties
-- `[START_BIOME:biome]` - Biomes where the civ can start and build.
-- `[BIOME_SUPPORT:biome:freq]` - Controls territorial expansion speed.
+- `[START_BIOME:biome]` - Biomes where the civ can start and build. See [references/shared/biomes.md](../shared/biomes.md) for a list of tokens.
+- `[BIOME_SUPPORT:biome:freq]` - Controls territorial expansion speed. See [references/shared/biomes.md](../shared/biomes.md) for a list of tokens.
 - `[DEFAULT_SITE_TYPE:type]` - Sets the default structure.
     - **Valid Types:** `CITY`, `DARK_FORTRESS`, `TREE_CITY`, `CAVE`, `CAVE_DETAILED`, `PLAYER_FORTRESS`, `MONUMENT`.
 - `[MAX_POP_NUMBER:n]` - Hard limit on total historical population.

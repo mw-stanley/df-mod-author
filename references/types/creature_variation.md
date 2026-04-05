@@ -7,7 +7,7 @@ Creature variations act as macros or scripts that modify a base creature's raw d
 ### 1. Addition (`CV_NEW_TAG` / `CV_ADD_TAG`)
 Adds a new token (including arguments) to the creature definition.
 - **Syntax:** `[CV_NEW_TAG:token_to_add]`
-- **Example:** `[CV_NEW_TAG:BIOME:ANY_FOREST]` adds `[BIOME:ANY_FOREST]` to the creature.
+- **Example:** `[CV_NEW_TAG:BIOME:ANY_FOREST]` adds `[BIOME:ANY_FOREST]` to the creature. See [references/shared/biomes.md](../shared/biomes.md) for a list of valid biome tokens.
 
 ### 2. Removal (`CV_REMOVE_TAG`)
 Removes existing tokens that match the specified argument chain.

@@ -11,7 +11,14 @@ Creature definitions define a species, its sub-types (castes), biology, behavior
 - `[GENERAL_BABY_NAME:singular:plural]` - Name for babies.
 - `[GENERAL_CHILD_NAME:singular:plural]` - Name for children.
 
-## 2. Castes & Selection
+## 2. Environment & Biomes
+- `[BIOME:biome_id]` - Valid biomes where the creature can spawn. See [references/shared/biomes.md](../shared/biomes.md) for a list of tokens.
+- `[UNDERGROUND_DEPTH:min:max]` - Cavern levels (0:0 for surface).
+- `[FREQUENCY:0-100]` - Chance of appearing in a valid biome.
+- `[CLUSTER_NUMBER:min:max]` - Number of individuals that spawn together.
+- `[POPULATION_NUMBER:min:max]` - Overall population size in the world.
+
+## 3. Castes & Selection
 Castes define sexes, sub-species, or special variations (e.g., workers vs. queens).
 - `[CASTE:ID]` - Starts a new caste definition.
 - `[SELECT_CASTE:ID]` - Re-selects a caste (or `ALL`) for modification.
@@ -19,7 +26,7 @@ Castes define sexes, sub-species, or special variations (e.g., workers vs. queen
 - `[POP_RATIO:number]` - Relative frequency of the caste in the population.
 - `[MALE]` / `[FEMALE]` - Defines biological sex.
 
-## 3. Biology & Lifespan
+## 4. Biology & Lifespan
 - `[MAXAGE:min:max]` - Natural lifespan in years.
 - `[BABY:years]` / `[CHILD:years]` - Age thresholds for life stages.
 - `[BODY_SIZE:years:days:size]` - Volume in cm³ at a specific age.
@@ -30,7 +37,7 @@ Castes define sexes, sub-species, or special variations (e.g., workers vs. queen
 - `[CAN_LEARN]` - Allows skill gain and professions.
 - `[CAN_SPEAK]` - Allows speech and social interactions.
 
-## 4. Behavior & Temperament
+## 5. Behavior & Temperament
 - `[BENIGN]` - Non-aggressive; flees unless cornered.
 - `[LARGE_PREDATOR]` - Aggressive; attacks smaller creatures.
 - `[CRAZED]` - Always berserk; attacks non-species members.
@@ -40,7 +47,7 @@ Castes define sexes, sub-species, or special variations (e.g., workers vs. queen
 - `[GRAZER:value]` - Requires pasture (higher value = eats less).
 - `[HUNTS_VERMIN]` - Kills nearby vermin.
 
-## 5. Mannerisms
+## 6. Mannerisms
 Mannerisms add flavor descriptions to behavior. Some require body part strings to correctly identify the anatomy being used.
 
 ### Standalone Mannerisms
@@ -71,7 +78,7 @@ Mannerisms add flavor descriptions to behavior. Some require body part strings t
 - `[MANNERISM_TONGUE:string]` (e.g., `[MANNERISM_TONGUE:tongue]`)
 - `[MANNERISM_LEG:string]` (e.g., `[MANNERISM_LEG:leg]`)
 
-## 6. Personality Facets
+## 7. Personality Facets
 Defines the statistical spread of personality traits for a species.
 
 - **Syntax:** `[PERSONALITY:FACET:P1:P2:P3]`

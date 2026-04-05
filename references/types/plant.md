@@ -6,7 +6,7 @@ Plant definitions define shrubs, trees, and crops, including their growth cycles
 - `[PLANT:ID]` - Starts a new plant definition.
 - `[NAME:singular:plural:adjective]` - Basic nomenclature.
 - `[ALL_NAMES:string]` - Sets all three name forms to the same string.
-- `[BIOME:biome_id]` - Valid biomes (e.g., `NOT_FREEZING`, `SUBTERRANEAN_WATER`).
+- `[BIOME:biome_id]` - Valid biomes. See [references/shared/biomes.md](../shared/biomes.md) for a list of tokens.
 - `[UNDERGROUND_DEPTH:min:max]` - Cavern levels (0:0 for surface).
 - `[FREQUENCY:0-100]` - Chance of appearing in a valid biome.
 - `[GROWDUR:n]` - Time to grow in farm plots (hundreds of ticks, Default: 300).
