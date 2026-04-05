@@ -24,6 +24,14 @@ Every mod in Dwarf Fortress v50+ MUST contain an `info.txt` file in its root dir
 | `REQUIRES_ID_AFTER_ME` | `string` | Specified mod ID must be loaded later in the load order. |
 | `CONFLICTS_WITH_ID` | `string` | Mod will NOT load if the specified mod ID is present. |
 
+### How and when to declare a dependency / conflict
+
+1. If you are using `SELECT_` or `CUT_` to modify a vanilla object, your mod must load after the vanilla module. Use `REQUIRES_ID_BEFORE_ME` to declare this.
+2. Completely replacing vanilla objects without using CUT:
+    - You can either use `REQUIRES_ID_BEFORE_ME` to make sure the vanilla object is declared first and then overwritten
+    - Or you can use `CONFLICTS_WITH_ID` to make sure the vanilla object is not loaded at all.
+3. Graphics exception: graphics mods use LIFO order, so if you are replacing vanilla graphics, you should use `REQUIRES_ID_AFTER_ME` to declare this.
+
 ## Steam Workshop Tokens
 
 These tokens are only used for mods distributed on the Steam Workshop. Do not add them without asking the user first.

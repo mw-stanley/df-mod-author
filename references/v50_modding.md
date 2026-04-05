@@ -41,7 +41,6 @@ When modifying vanilla data, determine if the Object Type supports `SELECT_` and
 For types like `BODY`, `BUILDING`, `MATERIAL_TEMPLATE`, or `TISSUE_TEMPLATE` that are not supported by `SELECT_` and `CUT_`, you **MUST**:
 1. Copy the entire vanilla RAW file into your mod's `objects/` folder.
 2. Modify the new file directly.
-3. Use `CONFLICTS_WITH_ID` in `info.txt` if removing objects.
 
 ### 6. Using Tokens
 Tokens are enclosed in square brackets with arguments separated by colons. Consult the sub-reference files in `types/` for the specific tokens available for that object type. It is critically important that you do not hallucinate tokens or arguments. Verify all tokens and arguments against the vanilla raws or the sub-reference files.
