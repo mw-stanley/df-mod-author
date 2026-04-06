@@ -4,7 +4,9 @@ This skill is a tool to help you create and edit mods for Dwarf Fortress.
 
 Add this skill to your agent so it can understand the structure of Dwarf Fortress mods, RAW files, and tokens and arguments used in them.
 
-You can see an example of the skill in action here: https://gist.github.com/mw-stanley/a6017233be672e05de8f18f122c6910f
+Examples:
+- Automating some tedious edits to the graphics raws: https://gist.github.com/mw-stanley/a6017233be672e05de8f18f122c6910f
+- Brainstorming a new wooly mammoth creature: https://gist.github.com/mw-stanley/39b5f11e57a2ebd1575d45a08c46dbf1
 
 ## Update information
 
@@ -28,6 +30,7 @@ You can see an example of the skill in action here: https://gist.github.com/mw-s
 ### Working with the agent
 
 - Start with planning mode - the DF raws are complex and letting your agent plan first will help it gather relevant material and make sure it "understands" the task before it starts editing.
+- I find the [superpowers](https://github.com/obra/superpowers/) skill useful in conjunction with this skill. Use the brainstorming skill to have the agent work with you on designs for new objects, then the writing-plans and executing-plans skills can implement them.
 - Watch the context size - some of the DF raw files are pretty big and you may be trying to load a lot of them. Tell the model in planning mode to be selective about what it loads. This can also avoid long API calls and timeouts.
 - Use a powerful model with reasoning - the DF raws can require a lot of reasoning to get right. Claude has a model called `opusplan` that uses Opus to plan and Sonnet to execute that can be useful.
 - I prefer to use the CLI to run the agent with this skill - I have tested with the `gemini` and `claude` CLIs. You can use the CLI in conjunction with an IDE like VSCode, Antigravity, or Cursor. 
@@ -41,15 +44,15 @@ You can see an example of the skill in action here: https://gist.github.com/mw-s
 
 #### What is the skill bad at?
 
-- It's not good at tasks that are too big. "Make me a mod like x" is going to be too big. You need to break it down into smaller steps.
-- It's not great at coming up with new ideas or being creative. If you give it a creative prompt like "make a wooly mammoth", it will probably hallucinate tokens or arguments - you did tell it to invent stuff! Use it as a tool to implement your ideas, not to come up with them. There are publically available agent skills to help with brainstorming that go well with this skill.
+- Without a good planning / brainstorming mode and a powerful model, it's not good at tasks that are too big. "Make me a mod like x" is going to be too big. You need to break it down into smaller steps - the brainstorming and writing-plans superpowers skills are great at this.
+- It's not great at coming up with new ideas or being creative. If you give it a creative prompt like "make a wooly mammoth", it can easily hallucinate tokens or arguments - you did tell it to invent stuff! Make sure you review the things it creates closely.
 - It's not perfect at validating its output - if you tell it to get creative without double-checking everything, it will probably make mistakes. If you see that it's doing a lot of direct file authoring, be suspicious. If it's writing scripts to do the work, that's a good sign.
 
 ### Validating & Troubleshooting
 
 - The agent should be pretty good about not hallucinating tokens or arguments, but it's not perfect. 
 - The agent should be able to validate its own work by checking the vanilla raws and the instructions in this skill - tell it to do so if it hasn't.
-- Make changes in small steps and validate them in-game to isolate issues and then ask the agent to fix them.
+- Make changes in small steps and validate them in-game to isolate issues and then ask the agent to fix them. If you make too many changes at once, it's really hard to debug in-game.
 - Tell the agent to explain its reasoning to you if you think it might have made a mistake.
 - If the agent is having trouble with a task, try breaking it down into smaller steps and asking the agent to complete each step individually - planning mode is great for this.
 
