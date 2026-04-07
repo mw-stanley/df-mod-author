@@ -76,8 +76,26 @@ To find a specific object definition (e.g., `[CREATURE:DWARF]`):
 | Phase | Action | Reference |
 | :--- | :--- | :--- |
 | **1. Initialize** | Create folder, generate `info.txt`. | [info_txt.md](references/info_txt.md) |
-| **2. Define Content** | Add files to `objects/`, `graphics/`, `scripts/`, or `sound/`. | [v50_modding.md](references/v50_modding.md) |
-| **3. Modify Vanilla** | Use Modding API (`SELECT_`/`CUT_`) where supported. | [v50_modding.md](references/v50_modding.md) |
+| **2. Define Content** | Add files to `objects/`, `graphics/`, `scripts/`, or `sound/`. | (See below) |
+| **3. Modify Vanilla** | Use Modding API (`SELECT_`/`CUT_`) where supported. | (See Modding API Syntax) |
+
+## Modding API Syntax
+
+When modifying vanilla data, determine if the Object Type supports `SELECT_` and `CUT_`.
+
+### Supported Types ONLY (SELECT_/CUT_):
+`SELECT_` and `CUT_` functions **ONLY** work for the following:
+- `CREATURE`, `ENTITY`, `INTERACTION`, `ITEM`, `INORGANIC`, `PLANT`, `REACTION`, `WORD`, `TRANSLATION`, `SYMBOL`, `MUSIC`, `SOUND`
+
+**Syntax:**
+- `[SELECT_<TYPE>:<ID>]`: Target an existing object to add or overwrite tokens.
+- `[CUT_<TYPE>:<ID>]`: Remove an object entirely (useful for "deleting" or rewriting an object).
+- **Items:** Always use `ITEM` as the type (e.g., `[SELECT_ITEM:ITEM_HELM_HELM]`).
+
+### Unsupported Types (Full File Reproduction):
+For types like `BODY`, `BUILDING`, `MATERIAL_TEMPLATE`, or `TISSUE_TEMPLATE` that are not supported by `SELECT_` and `CUT_`, you **MUST**:
+1. Copy the entire vanilla RAW file into your mod's `objects/` folder.
+2. Modify the new file directly.
 
 ## Common Mistakes / Red Flags
 
@@ -87,6 +105,5 @@ To find a specific object definition (e.g., `[CREATURE:DWARF]`):
 
 ## Key Reference Links
 - [info_txt.md](references/info_txt.md) - Mandatory mod metadata.
-- [v50_modding.md](references/v50_modding.md) - RAW editing workflows and syntax.
 - [tokens.md](references/tokens.md) - Exhaustive list of RAW object types and prefixes.
 - [types/](references/types/) - Sub-references for specific RAW tokens.
