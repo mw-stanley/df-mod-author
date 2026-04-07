@@ -1,16 +1,23 @@
 ---
 name: df-mod-author
-description: Specialized skill for creating and managing Dwarf Fortress mods (v53.11). Covers mod structure, info.txt configuration, and provides access to RAW and graphics references.
+description: Use when creating, modifying, or debugging Dwarf Fortress mods, specifically when working with RAW files, graphics, mod structure, or searching vanilla game data for reference.
 ---
 
 # Dwarf Fortress Mod Author
+
+## Overview
+This skill provides a comprehensive guide for authors creating and managing Dwarf Fortress mods. It covers mod structure, configuration, and how to safely reference vanilla game data.
 
 > [!IMPORTANT]
 > **Version Compatibility:** This skill's documentation is current as of **Dwarf Fortress version 53.11**. 
 > - **Vanilla Files:** Content in your `data/vanilla` directory may be newer and use tokens that contradict this guide. 
 > - **Wiki Content:** The Dwarf Fortress Wiki may contain information for versions newer or older than both this skill and your local game files. Always prioritize empirical evidence from the vanilla RAWs.
 
-This skill provides a comprehensive guide for authors creating and managing Dwarf Fortress mods.
+## When to Use
+- Creating a new Dwarf Fortress mod from scratch.
+- Modifying existing RAW objects (creatures, items, entities).
+- Adding custom graphics, tilesets, or sprites.
+- Cross-referencing vanilla files to avoid token hallucination.
 
 ## Mod Structure
 
@@ -64,21 +71,19 @@ To find a specific object definition (e.g., `[CREATURE:DWARF]`):
 2.  Pattern: `\[<TYPE>:<ID>\]` (e.g., `\[CREATURE:DWARF\]`).
 3.  Include pattern: `*.txt`.
 
-## High-Level Workflow
+## Quick Reference Workflow
 
-### 1. Initialize Mod
-- Create the mod's root folder.
-- Generate a valid `info.txt` file (Consult [info_txt.md](references/info_txt.md)).
+| Phase | Action | Reference |
+| :--- | :--- | :--- |
+| **1. Initialize** | Create folder, generate `info.txt`. | [info_txt.md](references/info_txt.md) |
+| **2. Define Content** | Add files to `objects/`, `graphics/`, `scripts/`, or `sound/`. | [v50_modding.md](references/v50_modding.md) |
+| **3. Modify Vanilla** | Use Modding API (`SELECT_`/`CUT_`) where supported. | [v50_modding.md](references/v50_modding.md) |
 
-### 2. Define Content
-Depending on the type of content you are adding or modifying:
-- **RAWs (Objects):** Use the [v50_modding.md](references/v50_modding.md) guide for editing files in the `objects/` folder.
-- **Graphics:** Use tilesets and sprites in the `graphics/` folder (Consult [graphics.md](references/types/graphics.md)).
-- **Scripts:** Place Lua files in `scripts/`.
-- **Sound:** Place sound files in `sound/`.
+## Common Mistakes / Red Flags
 
-### 3. Modification Strategy
-When modifying vanilla data, use the Modding API (`SELECT_`/`CUT_`) whenever supported to ensure mod compatibility. Consult [v50_modding.md](references/v50_modding.md) for strategy selection.
+- **Guessing tokens:** Never hallucinate or assume token names. Always use `grep_search` on the vanilla RAWs to verify syntax.
+- **Direct vanilla edits:** Do not modify files in `data/vanilla/`. Always create a separate mod folder and use the Modding API (`[SELECT_...]` or `[CUT_...]`) if the entities being edited support it.
+- **Missing info.txt:** Creating a mod folder without a valid `info.txt` will cause the mod to fail to load.
 
 ## Key Reference Links
 - [info_txt.md](references/info_txt.md) - Mandatory mod metadata.
